@@ -550,6 +550,6 @@ class Hex {
 
 function init() {
   hexer = new Hexer;
-  hexer.placeImage("island.jpg");
+  hexer.placeImage("lair_search.jpg");
 }
 init();
