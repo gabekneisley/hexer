@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+   <meta charset="UTF-8">
+   <title>HexGrid</title>
+   <style>
+     #grid_overlay {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+     }
+     #map_container {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      width: 1188px;
+     }
+     #col_labels,#row_labels {
+      display: flex;
+      padding: 0;
+      margin: 0;
+     }
+     #col_labels {    
+      flex-direction: row;
+     }
+     #row_labels {    
+      flex-direction: column;
+     }
+     #col_labels li, #row_labels li {
+      margin: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     }
+     #col_labels li {
+      height: 50px;
+     }
+     #col_labels li.corner {
+      width: 50px;
+      background-color: #82ccea;
+     }
+     #row_labels li {
+      width: 50px;
+     }
+     #col_labels li.hspacer {
+      background-color: #82ccea;
+     }
+     #row_labels li.row {
+      background-color: #6ca8c0;
+      color: white;
+     }
+     #row_labels li.highlight {
+      background-color: color-mix(in srgb, #6ca8c0 75%, black);
+     }
+     #col_labels li.col {
+      background-color: #6ca8c0;
+      color: white;
+     }
+     #col_labels li.highlight {
+      background-color: color-mix(in srgb, #6ca8c0 75%, black);
+     }
+     .hex {
+      stroke: #444;
+      fill: black;
+     }
+     .hex:hover {
+      stroke: #444;
+      fill: #222;
+     }
+     .hex.highlight {
+      fill: #161616;
+     }
+     .hex-obscured {
+      fill-opacity: 100%;
+     }
+     .hex-revealed-slight {
+      fill-opacity: 65%;
+     }
+     .hex-revealed-mid {
+      fill-opacity: 50%;
+     }
+     .hex-revealed {
+      fill-opacity: 0%;
+     }
+     .hex-inhabited {
+      stroke: #fff;
+      stroke-width: 3;
+      fill: transparent;
+     }
+     .travel-icon {
+      fill: #fff;
+     }
+     .hidden {
+      display: none;
+     }
+   </style>
+  </head>
+  <body>
+    <div id=hexer_container>
+      <div id=map_container>
+        <ul id="col_labels"></ul>
+        <ul id="row_labels"></ul>
+        <div id=canvas_container>
+          <canvas id="canvas" width="800" height="500"/>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
